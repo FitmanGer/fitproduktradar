@@ -1,0 +1,18 @@
+FITPRODUKTRADAR – ANDROID-EINRICHTUNG
+
+Wichtig: GitHub entpackt eine hochgeladene ZIP-Datei nicht automatisch.
+Die drei Programmdateien müssen daher an die richtigen Pfade im Repository.
+
+1. Öffne Chrome auf deinem Android-Smartphone und melde dich bei github.com an.
+2. Öffne dein privates Repository fitproduktradar.
+3. Im Repository: Add file > Upload files. Lade build.py hoch und bestätige Commit changes.
+4. Lade products.csv hoch. Anschließend verschiebe sie im GitHub-Dateieditor, indem du den Dateinamen zu data/products.csv änderst und commitest. Alternativ: Add file > Create new file, als Dateinamen data/products.csv eingeben und den Inhalt aus der heruntergeladenen Datei einfügen.
+5. Für die Workflow-Datei: Add file > Create new file. Dateiname: .github/workflows/build.yml. Kopiere den vollständigen Inhalt aus der heruntergeladenen Datei build.yml hinein. Commit changes.
+6. Öffne Actions > Build website > Run workflow > Run workflow. Prüfe den grünen Haken.
+7. Im Repository sollte danach docs/index.html vorhanden sein.
+
+Falls Menüpunkte auf Android fehlen: Chrome-Menü (drei Punkte) > Desktopwebsite aktivieren.
+
+Sicherheit: Keine Passwörter oder API-Schlüssel in die Dateien schreiben.
+Noch keine echten Angebote, keine aktive Produktsuche, keine Affiliate-Einnahmen.
+Vor einer öffentlichen Website rechtliche Angaben und Produktdaten prüfen.

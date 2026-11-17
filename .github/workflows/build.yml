@@ -1,3 +1,4 @@
+
 name: FitRadar Build
 
 on:
@@ -8,11 +9,21 @@ on:
     - cron: "0 6 * * *"
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Repository laden
         uses: actions/checkout@v4
@@ -24,4 +35,15 @@ jobs:
 
       - name: FitRadar erstellen
         run: python build.py
-  
+
+      - name: GitHub Pages konfigurieren
+        uses: actions/configure-pages@v5
+
+      - name: Website hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs
+
+      - name: Website veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,7 +1,7 @@
 import csv, html, pathlib, datetime
 ROOT=pathlib.Path(__file__).parent
 OUT=ROOT/'docs'; OUT.mkdir(exist_ok=True)
-rows=list(csv.DictReader((ROOT/'data/products.csv').open(encoding='utf-8')))
+rows=list(csv.DictReader((ROOT/'products.csv').open(encoding='utf-8')))
 items=[]
 for p in rows:
     if p['approved'].strip().lower()!='yes': continue
